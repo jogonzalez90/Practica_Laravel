@@ -7,18 +7,23 @@ Route::get('/', function () {
 });
 
 Route::get('blog', function () {
-    return 'Listado de publicaciones';
+    //Consulta a base de datos
+    $posts = [
+        ['id' => 1, 'title' => 'PHP',     'slug' => 'php'],
+        ['id' => 2, 'title' => 'Laravel', 'slug' => 'laravel'],
+    ];
+
+    return view('blog', ['posts' => $posts]);
 });
 
 Route::get('blog/{slug}', function ($slug) {
     //Consulta a base de datos
+    $post = $slug;
 
-    return $slug;
+    return view('post', ['post' => $post]);
 });
 
-Route::get('buscar', function (Request $request) {
-    return $request->all();
-});
+
 
 
 

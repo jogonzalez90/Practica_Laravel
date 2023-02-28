@@ -9,6 +9,6 @@
 <body>
     <h1>Detalle</h1>
 
-    {{$post}}
+    {{ $post }}
 </body>
 </html>
